@@ -30,9 +30,10 @@
 } 
  else{
    
-    // Controlador por defecto
+    // Controlador por defecto    
     require_once "controller/controller.php";
-    $controlador = new controller("bd");    
+    $controller = new controller();
+    $controller->index();           
  }
 
 ?>
