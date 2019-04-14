@@ -5,13 +5,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title></title>
-        <!--Bootstrap-->
-        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link href="style.css" rel="stylesheet">
+        
     </head>
     <body>
-        <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
-        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <?php require_once "header.php"; ?>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <img id="logotipo" src="imagenes/Logotipo.png">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
