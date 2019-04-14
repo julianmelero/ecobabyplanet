@@ -1,0 +1,61 @@
+#logotipo{
+    width: 200px;
+    height: 100px;
+    display: inline-block;
+    padding: 15px 40px;
+}
+
+#btn{
+    padding: 10px 15px;
+    background-color: #F373D0;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+}
+
+#imagen{
+    width: 300px;
+    height: 200px;
+    padding: 20px 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#logo{
+    background-color: #FFEEFA;
+    width: 100%;
+    height: 100%;
+}
+
+h4{
+    color: #F373D0;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+p {
+    text-align: center;
+}
+
+footer{
+    background-color: #FFEEFA;
+    padding: 30px 30px;
+    color: #F373D0;
+}
+
+ul li {
+    display: inline;
+    padding: 5px;
+}
+
+ul li a {
+    text-align: center;
+    text-decoration: none;
+    color: #F373D0;
+}
+
+form{
+    margin: 0 auto;
+    text-align: center;
+}
