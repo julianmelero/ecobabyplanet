@@ -43,14 +43,14 @@
                 </div>
             </div>
             <div class="form-group">
-                <form action="" enctype="multipart/form-data">
+                <form action="index.php?metodo=usuarios&accion=alta" method="POST" onsubmit="return comprobar_pass()">
                     <label for="nombre"><input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre" size="19" required></label>
                     <label for="apellidos"><input type="text" class="form-control" name="apellidos" id="apellidos" placeholder="Apellidos" size="19" required></label><br>
                     <label for="movil"><input type="text" class="form-control" name="movil" id="movil" placeholder="Movil" size="19" required></label>
                     <label for="fecha_nacimiento"><input type="date" class="form-control" name="fecha_nacimiento" id="fecha" required></label><br>
                     <label for="email"><input type="email" class="form-control" name="email" id="email" placeholder="Email" size="47" required></label><br>
                     <label for="contrasena"><input type="password" class="form-control" name="contrasena" id="contrasena" placeholder="Contraseña" size="35" required></label><br>
-                    <label for="contrasena2"><input type="password" class="form-control" name="contrasena2" id="contrasena" placeholder="Repita Contraseña" size="35" required></label><br>
+                    <label for="contrasena2"><input type="password" class="form-control" name="contrasena2" id="contrasena2" placeholder="Repita Contraseña" size="35" required></label><br>
                     <label for="direccion"><input type="text" class="form-control" name="direccion" id="direccion" size="50" placeholder="Dirección" required></label><br>
                     <label for="dni"><input type="text" class="form-control" name="dni" id="dni" placeholder="DNI" size="10" required></label><br>
 
@@ -75,5 +75,19 @@
                 </div>
             </footer>
         </div>
+    <script>
+    function comprobar_pass(){
+        alert();
+        alert($("#contrasena").val());
+        alert($("#contrasena2").val());
+        if ($("#contrasena").val()!= $("#contrasena2").val() ) {
+            alert("Las contraseñas no coinciden");
+            return false;
+        }
+        else{
+            return  true;
+        }
+    }
+    </script>
     </body>
 </html>
