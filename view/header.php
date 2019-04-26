@@ -23,12 +23,13 @@
                             <a class="nav-link" href="#">Carrito de compra</a>
                         </li>
                     </ul>
+                    <ul>  
                     <?php 
                     if (isset($_SESSION["email"])) {
-                        echo "¡Hola ".$_SESSION["email"]. "!";  
+                        echo "<li>¡Hola ".$_SESSION["email"]. "!</li>";  
                     
                     ?>
-                    <ul>                    
+                                      
                     <li class="nav-item"><a id="btn" class="nav-link" href="index.php?metodo=usuarios&accion=ver_suscripcion">Mis Suscripciones</a></li>
                     <li class="nav-item"><a id="btn" class="nav-link" href="index.php?metodo=usuarios&accion=cerrar_sesion">Cerrar sesión</a></li>
                     </ul>
