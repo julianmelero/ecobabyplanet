@@ -33,6 +33,26 @@ class model_usuarios extends model{
         }
 
     }
+    function get_usuario_login($parametros){
+        $sql= "select * from usuario where email=? and contrasena=?";
+        $hash = "eco";
+        $pass = $parametros["contrasena"];
+        $contrasena = hash( "sha256",$hash.$pass );                  
+        return $this->query($sql,array($parametros["email"],$contrasena));
+    }
+    function entrar($parametros){        
+        $usuarios = $this->get_usuario_login($parametros);
+        $cuantos=0;
+        while($datos = $usuarios[0]->fetch()){
+            $cuantos++;
+        }
+        if ($cuantos>0) {
+            return 0;
+        }
+        else{
+            return 1;
+        }
+    }
 }
 
 
