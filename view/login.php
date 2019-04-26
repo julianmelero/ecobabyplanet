@@ -20,9 +20,18 @@
                     </div>
                 </div>
                 <div class="form-group">
+                <?php
+                if (isset($_POST["incorrecto"]) and $_POST["incorrecto"]==1) {                                    
+                ?>
+                <div class="alert alert-danger" role="alert">
+                    ATENCIÓN: Email o contraseña incorrecta.
+                </div>
+                <?php
+                    }
+                ?>
                     <form action="index.php?metodo=usuarios&accion=entrar" method="POST">
                         <label for="email"><input type="email" class="form-control" name="email" placeholder="email" id="usuario" size="40" required></label>
-                        <label for="password"><input type="password" class="form-control" name="password" placeholder="Contraseña" id="password" size="40" required></label><br><br>
+                        <label for="contrasena"><input type="password" class="form-control" name="contrasena" placeholder="Contraseña" id="contrasena" size="40" required></label><br><br>
                         <input type="submit" id="btn" value="Iniciar sesión">
                     </form>
                 </div><br>

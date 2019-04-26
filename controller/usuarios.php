@@ -23,6 +23,20 @@ class usuarios {
         require_once getcwd()."/view/login.php";
     }
 
+
+    function entrar($parametros){
+        $usuarios = new model_usuarios("ecobabyplanet");
+        $resultado = $usuarios->entrar($parametros);
+        // Si el resultado es 0 es correcto
+        if ($resultado==0) {
+            require_once getcwd()."/view/index.php";    
+        }
+        else{
+            $_POST["incorrecto"] = 1;            
+            require_once getcwd()."/view/login.php";    
+        }        
+    }
+
 }
 
 ?>
