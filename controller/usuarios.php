@@ -6,7 +6,7 @@ class usuarios {
         require_once getcwd()."/view/registro.php";
     }
     
-    function alta(){                
+    function alta($parametros){                
         $usuarios = new model_usuarios("ecobabyplanet");
         $usuarios->alta($parametros);
         require_once getcwd()."/view/index.php";
