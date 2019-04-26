@@ -8,7 +8,7 @@ class model_usuarios extends model{
         $fecha = date("Y-m-d H:i:s");        
         $hash = "eco";
         $pass = $parametros["contrasena"];
-        $contrasena = hash( "md5",$hash.$pass );
+        $contrasena = hash( "sha256",$hash.$pass );
         echo $contrasena;        
         $this->query($sql,array($parametros["nombre"],$parametros["apellidos"],$parametros["movil"],$parametros["fecha_nacimiento"],$parametros["email"],
             $contrasena,$fecha,$parametros["direccion"],$parametros["dni"],2,2));        
