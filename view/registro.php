@@ -43,6 +43,15 @@
                 </div>
             </div>
             <div class="form-group">
+            <?php
+                if (isset($_POST["existe"]) and $_POST["existe"]==1) {                                    
+            ?>
+                <div class="alert alert-danger" role="alert">
+                    ATENCIÓN: El usuario ya existe.
+                </div>
+            <?php
+                }
+            ?>
                 <form action="index.php?metodo=usuarios&accion=alta" method="POST" onsubmit="return comprobar_pass()">
                     <label for="nombre"><input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre" size="19" required></label>
                     <label for="apellidos"><input type="text" class="form-control" name="apellidos" id="apellidos" placeholder="Apellidos" size="19" required></label><br>
@@ -76,10 +85,7 @@
             </footer>
         </div>
     <script>
-    function comprobar_pass(){
-        alert();
-        alert($("#contrasena").val());
-        alert($("#contrasena2").val());
+    function comprobar_pass(){        
         if ($("#contrasena").val()!= $("#contrasena2").val() ) {
             alert("Las contraseñas no coinciden");
             return false;
