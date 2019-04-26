@@ -33,6 +33,11 @@ class model_usuarios extends model{
         }
 
     }
+
+    function login($parametros){
+        $sql= "select * from usuario where email=?";
+        return $this->query($sql,array($email));
+    }
 }
 
 

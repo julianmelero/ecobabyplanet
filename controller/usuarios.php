@@ -16,9 +16,11 @@ class usuarios {
         else{
             $_POST["existe"] = 1;            
             require_once getcwd()."/view/registro.php";    
-        }
-        
+        }        
+    }
 
+    function login(){
+        require_once getcwd()."/view/login.php";
     }
 
 }

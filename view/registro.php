@@ -7,34 +7,7 @@
         <title>Eco Baby Planet</title>
     </head>
     <body>
-		<?php require_once "header.php"; ?>
-			<nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <img id="logotipo1" src="imagenes/Logotipo.png">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                 <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a id="inicio" class="nav-link" href="index.php">Inicio <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php">Contacto</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="suscripciones.php">Suscripciones</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Carrito de compra</a>
-                    </li>
-                </ul>
-                <div class="right">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item"><a id="btn" class="nav-link" href="login.php">Iniciar Sesión</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+		<?php require_once "header.php"; ?>			
 		<div class="container">
             <div class="row">
                 <div class="col-md-12">
