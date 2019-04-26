@@ -37,7 +37,7 @@ class model_usuarios extends model{
         $sql= "select * from usuario where email=? and contrasena=?";
         $hash = "eco";
         $pass = $parametros["contrasena"];
-        $contrasena = hash( "sha256",$hash.$pass );          
+        $contrasena = hash( "sha256",$hash.$pass );                  
         return $this->query($sql,array($parametros["email"],$contrasena));
     }
     function entrar($parametros){        
@@ -47,10 +47,10 @@ class model_usuarios extends model{
             $cuantos++;
         }
         if ($cuantos>0) {
-            return 1;
+            return 0;
         }
         else{
-            return 0;
+            return 1;
         }
     }
 }
