@@ -1,61 +1,94 @@
 #logotipo{
-    width: 200px;
+    max-width: 100%;
     height: 100px;
-    display: inline-block;
-    padding: 15px 40px;
+}
+
+#logotipo1{
+    width: 150px;
+    height: 90px;
+}
+
+img{
+    max-width: 100%;
+    height: 250px;
+    margin: 10px auto;
+    display: block;
+    padding: 10px 10px;
 }
 
 #btn{
     padding: 10px 15px;
-    background-color: #F373D0;
+    background-color: #154360;
     border-radius: 15px;
     color: white;
     text-align: center;
 }
 
-#imagen{
-    width: 300px;
-    height: 200px;
-    padding: 20px 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+#logo{
+    background-color: #DEFCD2;
+    width: 100%;
+    padding: 50px 50px;
 }
 
-#logo{
-    background-color: #FFEEFA;
-    width: 100%;
-    height: 100%;
+h1{
+    color: #154360;
+    text-align: center;
+    font-size: 22px;
 }
 
 h4{
-    color: #F373D0;
+    color: #154360;
     text-align: center;
     margin-top: 50px;
     margin-bottom: 40px;
 }
 
-p {
+p{
     text-align: center;
+    color: gray;
+}
+
+#text {
+    text-align: center;
+    padding: 40px 20px;
 }
 
 footer{
-    background-color: #FFEEFA;
-    padding: 30px 30px;
-    color: #F373D0;
+    background-color: #DEFCD2;
+    padding: 25px 25px;
+    color: #154360;
 }
 
 ul li {
     display: inline;
-    padding: 5px;
+    padding: 10px 10px;
 }
 
 ul li a {
     text-align: center;
     text-decoration: none;
-    color: #F373D0;
+    color: #154360;
 }
 
 form{
     margin: 0 auto;
     text-align: center;
+}
+
+#btn-sus{
+    color: white;
+    background-color: #154360;
+    text-align: center;
+    padding: 10px 25px;    
+    border-radius: 15px;
+}
+
+#usuario {
+    padding: 12px 40px;
+    background: url("imagenes/user2.png") 1px no-repeat;
+}
+
+#password {
+    padding: 12px 40px;
+    background: url("imagenes/key.png") 1px no-repeat;
 }
