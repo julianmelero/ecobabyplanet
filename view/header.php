@@ -26,7 +26,7 @@
                     <ul>  
                     <?php 
                     if (isset($_SESSION["email"])) {
-                        echo "<li>¡Hola ".$_SESSION["email"]. "!</li>";  
+                        echo "<li>¡Hola <a href='index.php?metodo=usuarios&accion=mis_datos'>".$_SESSION["email"]. "</a>!</li>";  
                     
                     ?>
                                       
