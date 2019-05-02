@@ -2,7 +2,11 @@
 <link href="<?php echo "./style.css"; ?>" rel="stylesheet">
 <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="<?php  echo "./bootstrap/js/bootstrap.min.js"; ?>"></script>
-<?php session_start(); ?>
+<?php 
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <img id="logotipo1" src="imagenes/Logotipo.png">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
