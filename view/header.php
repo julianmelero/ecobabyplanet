@@ -21,7 +21,7 @@ if (session_status() == PHP_SESSION_NONE) {
                             <a class="nav-link" href="index.php#contacto">Contacto</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">Suscripciones</a>
+                            <a class="nav-link" href="#">Suscripciones</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Carrito de compra</a>

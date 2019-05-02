@@ -44,7 +44,8 @@ class usuarios {
         $usuarios = new model_usuarios("ecobabyplanet");
         $usuarios->modificar($parametros);
         $resultado = $usuarios->get_usuario($_SESSION["email"]);
-        require_once getcwd()."/view/mis_datos.php";
+        //require_once getcwd()."/view/mis_datos.php";
+        header("Location: index.php?metodo=usuarios&accion=mis_datos");
     }
 
     function mis_datos(){

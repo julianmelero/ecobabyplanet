@@ -34,10 +34,10 @@ class model_usuarios extends model{
 
     }
 
-    function modificar($parametros){                        
-        $sql= "update usuario set nombre=?, apellidos=?,movil=?,fecha_nacimiento=?,direccion=?,dni=? where email=?;";
-        $this->query($sql,array($parametros["nombre"],$parametros["apellidos"],$parametros["movil"],
-            $parametros["fecha_nacimiento"],$parametros["direccion"],$parametros["dni"],$_SESSION["email"]));        
+    function modificar($parametros){       
+            $sql= "update usuario set nombre=?, apellidos=?,movil=?,fecha_nacimiento=?,direccion=?,dni=? where email=?;";
+            $this->query($sql,array($parametros["nombre"],$parametros["apellidos"],$parametros["movil"],
+                $parametros["fecha_nacimiento"],$parametros["direccion"],$parametros["dni"],$_SESSION["email"]));        
     }
 
     function get_usuario_login($parametros){
