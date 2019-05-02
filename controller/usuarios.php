@@ -39,6 +39,14 @@ class usuarios {
         }        
     }
 
+    function modificar($parametros){
+        session_start();        
+        $usuarios = new model_usuarios("ecobabyplanet");
+        $usuarios->modificar($parametros);
+        $resultado = $usuarios->get_usuario($_SESSION["email"]);
+        require_once getcwd()."/view/mis_datos.php";
+    }
+
     function mis_datos(){
         session_start();
         $usuarios = new model_usuarios("ecobabyplanet");
