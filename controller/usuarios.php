@@ -61,8 +61,8 @@ class usuarios {
     }
     function cerrar_sesion($parametros){ 
         session_start();       
-        session_destroy();
-        require_once getcwd()."/view/index.php";
+        session_destroy();        
+        header("Location: index.php");
     }
 
 }
