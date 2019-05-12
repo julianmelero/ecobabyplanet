@@ -125,9 +125,10 @@ class usuarios {
         session_start();
         $_SESSION["email"] = $usuario->getEmail();
         $_SESSION["usuario_id"] = $usuario->getId();
+        $_SESSION["rol"] = $usuario->getRol()->getId();
     }
 
-    function cerrar_sesion($parametros){ 
+    function cerrar_sesion($parametros){
         session_start();       
         session_destroy();        
         header("Location: index.php");
