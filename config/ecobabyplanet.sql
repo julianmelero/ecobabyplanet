@@ -44,7 +44,6 @@ CREATE TABLE IF NOT EXISTS `ecobabyplanet`.`usuario` (
   `fecha_creacion` DATETIME NOT NULL COMMENT '',
   `direccion` VARCHAR(50) NOT NULL COMMENT '',
   `dni` VARCHAR(10) NOT NULL COMMENT '',
-  `id_rol` INT(11) NOT NULL COMMENT '',
   `rol_idrol` INT NOT NULL COMMENT '',
   PRIMARY KEY (`id_usuario`)  COMMENT '',
   INDEX `fk_usuario_rol_idx` (`rol_idrol` ASC)  COMMENT '',
