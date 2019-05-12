@@ -12,13 +12,14 @@
             <div class="row">
                 <div class="col-md-12">
                     <img src="imagenes/caja.png">
-                    <h4>Productos</h4>
+                    <h4>Administrar Productos</h4>
                 </div>
             </div>
-            <div class="form-group">            
-                <form action="index.php?metodo=usuarios&accion=modificar" method="POST">
-                    <label for="nombre">Nombre<input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre" size="45" required></label>                                
-                    <input type="submit" id="btn" value="Guardar">
+            <div class="form-group">
+            <?php while ($datos = $resultado[0]->fetch()) { // Listamos productos  ?>
+                          
+                    
+            <?php } ?>                    
                 </form>
             </div>
         </div>
