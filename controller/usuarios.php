@@ -59,6 +59,12 @@ class usuarios {
     function crear_sesion($parametros){        
         session_start();
         $_SESSION["email"] = $parametros["email"];
+        $usuarios = new model_usuarios("ecobabyplanet");
+        $resultado = $usuarios->get_usuario($_SESSION["email"]);
+        while ($datos = $resultado[0]->fetch()) {
+            $_SESSION["rol"] = $datos["rol_idrol"];
+        }
+        
     }
     function cerrar_sesion($parametros){ 
         session_start();       
