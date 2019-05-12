@@ -22,13 +22,13 @@ class model_usuarios extends model{
         else{
 
         $sql = "insert into usuario(nombre, apellidos, movil, fecha_nacimiento,email,contrasena,
-         fecha_creacion,direccion,dni,id_rol, rol_idrol) VALUES (?,?,?,?,?,?,?,?,?,?,?)";         
+         fecha_creacion,direccion,dni,rol_idrol) VALUES (?,?,?,?,?,?,?,?,?,?)";         
         $fecha = date("Y-m-d H:i:s");        
         $hash = "eco";
         $pass = $parametros["contrasena"];
         $contrasena = hash( "sha256",$hash.$pass );              
         $this->query($sql,array($parametros["nombre"],$parametros["apellidos"],$parametros["movil"],$parametros["fecha_nacimiento"],$parametros["email"],
-            $contrasena,$fecha,$parametros["direccion"],$parametros["dni"],2,2));        
+            $contrasena,$fecha,$parametros["direccion"],$parametros["dni"],2));        
         return 0;
         }
 
