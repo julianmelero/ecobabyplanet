@@ -16,20 +16,21 @@
                 </div>
             </div>
             <div class="form-group">
-            <?php while ($datos = $resultado[0]->fetch()) {
-                $fecha = $datos["fecha_nacimiento"];
-                $fecha_nac = date("Y-m-d", strtotime($fecha));  ?>
-                <form action="index.php?metodo=usuarios&accion=modificar" method="POST">
-                    <label for="nombre">Nombre<input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre" size="19" value="<?php echo $datos['nombre'];  ?>" required></label>
-                    <label for="apellidos">Apellidos<input type="text" class="form-control" name="apellidos" id="apellidos" placeholder="Apellidos" size="19" value="<?php echo $datos['apellidos'];  ?>" required></label><br>
-                    <label for="movil">Móvil<input type="text" class="form-control" name="movil" id="movil" placeholder="Movil" size="19" value="<?php echo $datos['movil'];  ?>" required></label>
-                    <label for="fecha_nacimiento">F. Nacimiento<input type="date" class="form-control" name="fecha_nacimiento" id="fecha" value="<?php echo $fecha_nac;  ?>" required></label><br>
-                    <label for="email">Email<input readonly type="email" class="form-control" name="email" id="email" placeholder="Email" size="47" value="<?php echo $datos['email'];  ?>" required></label><br>                    
-                    <label for="direccion">Dirección<input type="text" class="form-control" name="direccion" id="direccion" size="50" placeholder="Dirección" value="<?php echo $datos['direccion'];  ?>" required></label><br>
-                    <label for="dni">DNI<input readonly type="text" class="form-control" name="dni" id="dni" placeholder="DNI" size="10" value="<?php echo $datos['dni'];  ?>" required></label><br>
-            <?php } ?>
-                    <input type="submit" id="btn" value="Guardar">
-                </form>
+
+            <?php /** @var usuario $resultado */
+            $fecha = $resultado->getFechaNacimiento();
+            $fecha_nac = date("Y-m-d", strtotime($fecha));  ?>
+            <form action="index.php?metodo=usuarios&accion=modificar" method="POST">
+                <label for="nombre">Nombre<input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre" size="19" value="<?php echo $resultado->getNombre();  ?>" required></label>
+                <label for="apellidos">Apellidos<input type="text" class="form-control" name="apellidos" id="apellidos" placeholder="Apellidos" size="19" value="<?php echo $resultado->getApellidos();  ?>" required></label><br>
+                <label for="movil">Móvil<input type="text" class="form-control" name="movil" id="movil" placeholder="Movil" size="19" value="<?php echo $resultado->getMovil();  ?>" required></label>
+                <label for="fecha_nacimiento">F. Nacimiento<input type="date" class="form-control" name="fecha_nacimiento" id="fecha" value="<?php echo $fecha_nac;  ?>" required></label><br>
+                <label for="email">Email<input readonly type="email" class="form-control" name="email" id="email" placeholder="Email" size="47" value="<?php echo $resultado->getEmail();  ?>" required></label><br>
+                <label for="direccion">Dirección<input type="text" class="form-control" name="direccion" id="direccion" size="50" placeholder="Dirección" value="<?php echo $resultado->getDireccion();  ?>" required></label><br>
+                <label for="dni">DNI<input readonly type="text" class="form-control" name="dni" id="dni" placeholder="DNI" size="10" value="<?php echo $resultado->getDni();  ?>" required></label><br>
+                <input type="hidden" name="id" value="<?php echo $resultado->getId();  ?>">
+                <input type="submit" id="btn" value="Guardar">
+            </form>
             </div>
         </div>
 		<div>

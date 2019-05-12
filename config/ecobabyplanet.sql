@@ -47,6 +47,7 @@ CREATE TABLE IF NOT EXISTS `ecobabyplanet`.`usuario` (
   `rol_idrol` INT NOT NULL COMMENT '',
   PRIMARY KEY (`id_usuario`)  COMMENT '',
   INDEX `fk_usuario_rol_idx` (`rol_idrol` ASC)  COMMENT '',
+  UNIQUE (email),
   CONSTRAINT `fk_usuario_rol`
     FOREIGN KEY (`rol_idrol`)
     REFERENCES `ecobabyplanet`.`rol` (`idrol`)

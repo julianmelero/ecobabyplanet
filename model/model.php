@@ -1,6 +1,8 @@
 <?php
 class model{  
-  public $mysql;
+
+    public $mysql;
+
   function __construct($db_name){    
     require_once("credenciales.php");
     try {
