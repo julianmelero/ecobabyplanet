@@ -11,6 +11,7 @@ class usuarios {
         $resultado = $usuarios->alta($parametros);
         // Si el resultado es 0 es correcto
         if ($resultado==0) {
+            $this->crear_sesion($parametros);
             require_once getcwd()."/view/index.php";    
         }
         else{
