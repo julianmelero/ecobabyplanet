@@ -6,4 +6,9 @@ class model_productos extends model{
         return $this->query($sql,array());
     }
 
+    function set_producto($parametros){
+        $sql="";
+        return $this->query($sql,array());
+    }
+
 }
