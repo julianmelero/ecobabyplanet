@@ -5,10 +5,10 @@ class model_productos extends model{
         $sql= "select * from producto;";
         return $this->query($sql,array());
     }
-    
+
     function set_producto($parametros){
-        $sql="";
-        return $this->query($sql,array());
+        $sql="insert into producto (nombre,descripcion) values (?,?) where id_producto=?;";
+        return $this->query($sql,array($parametros["nombre"],$parametros["descripcion"],$parametros["id_producto"]));
     }
 
 }

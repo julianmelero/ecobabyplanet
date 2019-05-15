@@ -15,6 +15,7 @@
                     <h4>Administrar Productos</h4>
                 </div>
             </div>
+            <form action="index.php?metodo=productos&accion=modificar" method="POST">
             <div class="form-group">
             <div class="row">
                 <div class="col-md-12">
@@ -31,7 +32,8 @@
             <tbody>            
             <?php while ($datos = $resultado[0]->fetch()) { // Listamos productos  ?>
             <tr>
-                <td><?php echo $datos["nombre"]; ?></td>              
+
+                <td> <input type="hidden" name="id_producto" id="id_producto" value="<?php echo $datos["id_producto"]; ?>">  <?php echo $datos["nombre"]; ?></td>              
                 <td><?php echo $datos["descripcion"]; ?></td>              
                 <td><input type="button" class="btn btn-warning" type="submit" value="Modificar"></td>
             </tr>  
