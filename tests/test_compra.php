@@ -17,12 +17,17 @@ try {
     $compraDAO = new compraDAO();
 
     $compra = $compraDAO->get_compra_by_id_usuario(1);
+    $suscripcion = $suscripcionDAO->get_suscripcion_by_id(1);
 
+    echo "---------------------------<br>";
+    echo "test get_compra_by_id_usuario method<br>";
     echo (ISSET($compra) ? 'existe' : 'no existe') . '<br>';
-    echo $compra->getIdUsuario() . '<br>';
-    echo $compra->getIdSuscripcion(). '<br>';
-    echo $compra->getFechaCompra(). '<br>';
+    echo $suscripcion->getNombre(). '<br>';
+    echo $suscripcion->getDescripcion(). '<br>';
+    echo $suscripcion->getPrecio(). '<br>';
+    echo $suscripcion->getDivisa(). '<br>';
     echo $compra->getFechaExpiracion(). '<br>';
+
 
 } finally {
     datasource::get_instance()->close_connection();

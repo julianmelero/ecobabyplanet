@@ -17,7 +17,7 @@ class compraDAO
     public function get_compra_by_id_usuario($id): ?Compra
     {
         $conn = $this->datasource->get_connection();
-        $sql = "SELECT c.id_usuario, s.id_suscripcion, c.fecha_compra, c.fecha_expiracion
+        $sql = "SELECT c.id_usuario, s.id_suscripcion, c.fecha_compra, c.fecha_expiracion, s.nombre, s.descripcion, s.precio, s.divisa
                 FROM usuario_compra_suscripcion c
                 JOIN usuario u USING (id_usuario) 
                 JOIN suscripcion s ON c.id_suscripcion = s.id_suscripcion  
@@ -33,7 +33,7 @@ class compraDAO
 
     private function extract_single_result($stmt): ?Compra
     {
-        $stmt->bind_result($id_usuario, $id_suscripcion, $fecha_compra, $fecha_expiracion);
+        $stmt->bind_result($id_usuario, $id_suscripcion, $fecha_compra, $fecha_expiracion, $nombre, $descripcion, $precio, $divisa);
         $compra = null;
         if ($stmt->fetch()) {
 
@@ -42,6 +42,10 @@ class compraDAO
 
             $suscripcion = new suscripcion();
             $suscripcion->setIdSuscripcion($id_suscripcion);
+            $suscripcion->setNombre($nombre);
+            $suscripcion->setDescripcion($descripcion);
+            $suscripcion->setPrecio($precio);
+            $suscripcion->setDivisa($divisa);
 
             $compra = new compra();
             $compra->setFechaCompra($fecha_compra);
