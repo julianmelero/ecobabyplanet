@@ -98,7 +98,6 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ecobabyplanet`.`producto` (
   `id_producto` INT NOT NULL AUTO_INCREMENT COMMENT '',
-  `id_suscripcion` INT NOT NULL COMMENT '',
   `nombre` VARCHAR(45) NOT NULL COMMENT '',
   `descripcion` VARCHAR(45) NOT NULL COMMENT '',
   PRIMARY KEY (`id_producto`)  COMMENT '')
