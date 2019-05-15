@@ -17,10 +17,8 @@ class compraDAO
     public function get_compra_by_id_usuario($id): ?Compra
     {
         $conn = $this->datasource->get_connection();
-        $sql = "SELECT c.id_usuario, s.id_suscripcion, c.fecha_compra, c.fecha_expiracion, s.nombre, s.descripcion, s.precio, s.divisa
+        $sql = "SELECT c.id_usuario, c.id_suscripcion, c.fecha_compra, c.fecha_expiracion
                 FROM usuario_compra_suscripcion c
-                JOIN usuario u USING (id_usuario) 
-                JOIN suscripcion s ON c.id_suscripcion = s.id_suscripcion  
                 WHERE c.id_usuario = ?";
         // Vincular variables a una instrucción preparada como parámetros
         $stmt = $conn->prepare($sql);
@@ -33,21 +31,13 @@ class compraDAO
 
     private function extract_single_result($stmt): ?Compra
     {
-        $stmt->bind_result($id_usuario, $id_suscripcion, $fecha_compra, $fecha_expiracion, $nombre, $descripcion, $precio, $divisa);
+        $stmt->bind_result($id_usuario, $id_suscripcion, $fecha_compra, $fecha_expiracion);
         $compra = null;
         if ($stmt->fetch()) {
 
-            $usuario = new usuario();
-            $usuario->setId($id_usuario);
-
-            $suscripcion = new suscripcion();
-            $suscripcion->setIdSuscripcion($id_suscripcion);
-            $suscripcion->setNombre($nombre);
-            $suscripcion->setDescripcion($descripcion);
-            $suscripcion->setPrecio($precio);
-            $suscripcion->setDivisa($divisa);
-
             $compra = new compra();
+            $compra->setIdUsuario($id_usuario);
+            $compra->setIdSuscripcion($id_usuario);
             $compra->setFechaCompra($fecha_compra);
             $compra->setFechaExpiracion($fecha_expiracion);
 
@@ -59,32 +49,29 @@ class compraDAO
     public function insert_compra($compra)
     {
         $conn = $this->datasource->get_connection();
-        $sql = "INSERT INTO usuario_compra_suscripcion (id_usuario, id_suscripcion, fecha_compra, fecha_expiracion) VALUES (?,?,?,?)";
+        $sql = "INSERT INTO usuario_compra_suscripcion (id_usuario, id_suscripcion, fecha_compra, fecha_expiracion) VALUES (?,?,CURRENT_TIMESTAMP,?)";
         $stmt = $conn->prepare($sql);
 
-        $id_usuario = $compra->getIdUsuario()->get_id();
-        $id_suscripcion = $compra->getIdSuscripcion()->get_id();
-        $fecha_compra = $compra->getFechaCompra();
+        $id_usuario = $compra->getIdUsuario()->getId();
+        $id_suscripcion = $compra->getIdSuscripcion()->getIdSuscripcion();
         $fecha_expiracion = $compra->getFechaExpiracion();
 
-        $stmt->bind_param('ddss', $id_usuario, $id_suscripcion, $fecha_compra, $fecha_expiracion);
+        $stmt->bind_param('dds', $id_usuario, $id_suscripcion, $fecha_expiracion);
         if ($stmt->execute() === FALSE) {
-            throw new Exception("No has podido insertar la compra." . $conn->error);
+            throw new Exception("No has podido realizar la compra." . $conn->error);
         }
         $stmt->close();
-        $compra->set_id($conn->insert_id);
     }
 
-    //TO DO
-    public function delete_game($game)
+    public function delete_compra($compra)
     {
         $conn = $this->datasource->get_connection();
-        $sql = "DELETE FROM Game WHERE id_game = ?";
+        $sql = "DELETE FROM usuario_compra_suscripcion WHERE id_usuario = ?";
         $stmt = $conn->prepare($sql);
-        $id = $game->get_id();
-        $stmt->bind_param('d', $id);
+        $id_usuario = $compra->getIdUsuario();
+        $stmt->bind_param('d', $id_usuario);
         if ($stmt->execute() === FALSE) {
-            throw new Exception("No has podido eliminar el juego." . $conn->error);
+            throw new Exception("No has podido eliminar la compra." . $conn->error);
         }
         $stmt->close();
     }
