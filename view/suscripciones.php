@@ -17,7 +17,7 @@
             </div>
             
             <div class="form-group  suscripcion">
-                <form action="#" method="POST">
+                <form action="carrito.php" method="POST">
                     <?php while ($datos = $resultado[0]->fetch()) { ?>
                     
                         <!--Tipo de suscripción-->
