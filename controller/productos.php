@@ -43,5 +43,19 @@ class productos {
 
     }
 
+    function irproducto($parametros){
+        session_start();
+    // Comprobamos que pueda acceder
+    if(isset($_SESSION["rol"])){
+        $productos = new model_productos("ecobabyplanet");     
+        $resultado = $productos->get_producto($parametros);   
+        require_once getcwd()."/view/mod_producto.php";    
+    }
+    else{
+        header( "Location: index.php");
+    }
+
+    }
+
 }
 ?>
