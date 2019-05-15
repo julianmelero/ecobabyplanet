@@ -8,7 +8,7 @@
     </head>
     <body>
         <?php require_once "header.php"; ?>
-		<div class="container">
+        <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <h4>Modalidades de suscripción</h4>
@@ -23,17 +23,28 @@
                         </div>
                     </div>
                     <div class="row">
+                        
+                        <?php 
+                        while ($datos = $resultado[0]->fetch()) { 
+                        ?>
+                        
                         <div class="col-md-6">
                             <!--Imagen producto-->
-                            <img src="" alt="" class="img-full" />
+                            <img src="<?php echo $datos["imagen"]; ?>" alt="producto" class="img-full" />
                         </div>
                         <div id="col2" class="col-md-6">
                             <!--Descripción producto, precio divisa-->
-                            <p></p>
-                            <p></p>
-                            <p></p>
+                            <p><?php echo $datos["nombre"]; ?></p>
+                            <p><?php echo $datos["descripcion"]; ?></p>
+                            <p><?php echo $datos["precio"]; ?></p>
+                            <p><?php echo $datos["divisa"]; ?></p>
                             <a class="float-right" href="" id="btn">Añadir a Carrito</a>
                         </div>
+
+                        <?php
+                        }
+                        ?>
+
                     </div><br>
                 </div>
             </div>
