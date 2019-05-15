@@ -15,40 +15,16 @@
                     <p>Elige el tipo de suscripción que más se adapte a tus necesidades</p>
                 </div>
             </div>
-            <div class="article">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h4 class="float-left"></h4>
-                        </div>
-                    </div>
-                    <div class="row">
-                        
-                        <?php 
-                        while ($datos = $resultado[0]->fetch()) { 
-                        ?>
-                        
-                        <div class="col-md-6">
-                            <!--Imagen producto-->
-                            <img src="<?php echo $datos["imagen"]; ?>" alt="producto" class="img-full" />
-                        </div>
-                        <div id="col2" class="col-md-6">
-                            <!--Descripción producto, precio divisa-->
-                            <p><?php echo $datos["nombre"]; ?></p>
-                            <p><?php echo $datos["descripcion"]; ?></p>
-                            <p><?php echo $datos["precio"]; ?></p>
-                            <p><?php echo $datos["divisa"]; ?></p>
-                            <a class="float-right" href="" id="btn">Añadir a Carrito</a>
-                        </div>
+            
+            <div class="form-group">    
+                <?php while ($datos = $resultado[0]->fetch()) { // listamos las suscripciones ?>
+                    
+                <?php } ?>
+                </form>
+                
+            </div><br>
 
-                        <?php
-                        }
-                        ?>
-
-                    </div><br>
-                </div>
-            </div>
-        </div><br>
+        </div>
 		<footer>
             <div class="row">
                 <div class="col-md-6"><img id="logotipo" src="imagenes/Logotipo.png"></div>
