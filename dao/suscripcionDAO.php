@@ -2,7 +2,6 @@
 
 require_once(__DIR__ . "/../model_db/suscripcion.php");
 require_once(__DIR__ . "/../dao/datasource.php");
-require_once(__DIR__ . "/../dao/datasource.php");
 
 class suscripcionDAO
 {
