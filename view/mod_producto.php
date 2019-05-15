@@ -15,7 +15,7 @@
                     <h4>Modificar Producto</h4>
                 </div>
             </div>
-            <form action="index.php?metodo=productos&accion=modificar" method="POST">
+            <form action="index.php?metodo=productos&accion=guardar" method="POST">
             <div class="form-group">
             <?php while ($datos = $resultado[0]->fetch()) { // Listamos el producto  ?>
             <input type="hidden" name="id_producto" id="id_producto" value="<?php echo $datos["id_producto"]; ?>">

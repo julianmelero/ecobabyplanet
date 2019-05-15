@@ -33,7 +33,7 @@ class productos {
     // Comprobamos que pueda acceder
     if(isset($_SESSION["rol"])){
         $productos = new model_productos("ecobabyplanet");        
-        $productos->set_producto($parametros);
+        $productos->guardar($parametros);
         header("Location: index.php?metodo=productos&accion=ver");
 
     }

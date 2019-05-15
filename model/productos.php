@@ -15,4 +15,9 @@ class model_productos extends model{
         return $this->query($sql,array($parametros["nombre"],$parametros["descripcion"]));
     }
 
+    function guardar($parametros){
+        $sql="update producto set nombre=?,descripcion=? where id_producto=?;";
+        return $this->query($sql,array($parametros["nombre"],$parametros["descripcion"],$parametros["id_producto"]));
+    }
+
 }
