@@ -16,30 +16,10 @@
                 </div>
             </div>
             <div class="form-group">
-            <div class="row">
-                <div class="col-md-12">
-                    <a type="button" class="btn btn-primary" href="index.php?metodo=productos&accion=nuevo">Añadir</a>
-                </div>
-            </div>
-            <br>
-            <table class="table table-sm">
-            <thead>
-            <th>Nombre</th>
-            <th>Descripción</th>
-            <th></th>
-            </thead>
-            <tbody>            
-            <?php while ($datos = $resultado[0]->fetch()) { // Listamos productos  ?>
-            <tr>
-                <td><?php echo $datos["nombre"]; ?></td>              
-                <td><?php echo $datos["descripcion"]; ?></td>              
-                <td><input type="button" class="btn btn-warning" type="submit" value="Modificar"></td>
-            </tr>  
-            <?php } ?>                    
-
-            </tbody>
-            </table>
-                </form>
+            <label for="nombre">Nombre<input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre" size="45" required></label>
+            <label for="nombre">Descripcion<input type="text" class="form-control" name="descripcion" id="descripción" placeholder="Nombre" size="45" required></label>
+            
+            </form>
             </div>
         </div>
 		<div>
