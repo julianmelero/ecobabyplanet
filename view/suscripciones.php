@@ -16,15 +16,32 @@
                 </div>
             </div>
             
-            <div class="form-group">    
-                <?php while ($datos = $resultado[0]->fetch()) { // listamos las suscripciones ?>
+            <div class="form-group  suscripcion">
+                <form action="#" method="POST">
+                    <?php while ($datos = $resultado[0]->fetch()) { ?>
                     
-                <?php } ?>
-                </form>
-                
-            </div><br>
+                        <!--Tipo de suscripción-->
+                        <h4 class="mod-sus"><?php echo $datos["nombre"]; ?></h4>
+                        
+                        <div class="row">
+                            <div class="col-md-4">
+                                <!--Imagen producto-->
+                                <img src="imagenes/caja.png" class="img-fluid pro--img float-left"/>
+                            </div>
+                            <div class="col-md-8">
+                                <!--Descripción producto, precio divisa-->
+                                <p class="desc"><?php echo $datos["descripcion"]; ?></p>
+                                <p class="precio"><?php echo $datos["precio"]; ?> <?php echo $datos["divisa"]; ?> (IVA incluido)</p>
+                                <!--Botón submit-->
+                                <input type="submit" class="float-right suscribirse" value="Añadir a Carrito"><br>
+                            </div>
+                        </div>
 
-        </div>
+                    <?php } ?>
+                </form>
+            </div>
+
+        </div><br>
 		<footer>
             <div class="row">
                 <div class="col-md-6"><img id="logotipo" src="imagenes/Logotipo.png"></div>
