@@ -43,6 +43,21 @@ class productos {
 
     }
 
+    function insertar($parametros){
+        session_start();
+    // Comprobamos que pueda acceder
+    if(isset($_SESSION["rol"])){
+        $productos = new model_productos("ecobabyplanet");        
+        $productos->set_producto($parametros);
+        header("Location: index.php?metodo=productos&accion=ver");
+
+    }
+    else{
+        header( "Location: index.php");
+    }
+
+    }
+
     function irproducto($parametros){
         session_start();
     // Comprobamos que pueda acceder

@@ -15,7 +15,7 @@
                     <h4>Nuevo Producto</h4>
                 </div>
             </div>
-            <form action="index.php?metodo=productos&accion=guardar" method="POST">
+            <form action="index.php?metodo=productos&accion=insertar" method="POST">
             <div class="form-group">
             <label for="nombre">Nombre<input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre" size="45" required></label>
             <label for="nombre">Descripcion<input type="text" class="form-control" name="descripcion" id="descripción" placeholder="Nombre" size="45" required></label>
