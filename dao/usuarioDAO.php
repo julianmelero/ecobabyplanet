@@ -1,6 +1,7 @@
 <?php
 require_once(__DIR__."/../dao/datasource.php");
 require_once(__DIR__."/../model_db/rol.php");
+require_once(__DIR__."/../model_db/usuario.php");
 
 class usuarioDAO
 {

@@ -122,4 +122,27 @@ class suscripcion
     {
         $this->divisa = $divisa;
     }
+
+    public function generarFechaExpiracion()
+    {
+
+        if (strtolower($this->getNombre()) == "mensual")
+        {
+            $date = date('Y-m-d', strtotime('+1 month'));
+        }
+        else if (strtolower($this->getNombre()) == "trimestral")
+        {
+            $date = date('Y-m-d', strtotime('+3 month'));
+        }
+        else if (strtolower($this->getNombre()) == "semestral")
+        {
+            $date = date('Y-m-d', strtotime('+6 month'));
+        }
+        else
+        {
+            $date = date('Y-m-d', strtotime('+1 year'));
+        }
+
+        return $date;
+    }
 }

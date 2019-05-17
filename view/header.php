@@ -33,7 +33,7 @@ if (session_status() == PHP_SESSION_NONE) {
                     <li class="nav-item"><a id="btn" class="nav-link" href="index.php?metodo=usuarios&accion=ver_suscripcion">Mis Suscripciones</a></li>
                     <li class="nav-item"><a id="btn" class="nav-link" href="index.php?metodo=usuarios&accion=cerrar_sesion">Cerrar sesión</a></li>
                     <?php
-                    if ($_SESSION["rol"]==1) { ?>
+                    if (isset($_SESSION["rol"]) and $_SESSION["rol"]==1) { ?>
                     <li class="nav-item"><a id="btn" class="nav-link" href="index.php?metodo=productos&accion=ver">Administrar Productos</a></li>
                     <?php } ?>
                     </ul>

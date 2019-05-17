@@ -17,9 +17,8 @@
             </div>
             
             <div class="form-group  suscripcion">
-                <form action="carrito.php" method="POST">
-                    <?php while ($datos = $resultado[0]->fetch()) { ?>
-                    
+                <?php while ($datos = $resultado[0]->fetch()) { ?>
+                <form action="index.php?metodo=carrito&accion=mostrar_carrito" method="POST">
                         <!--Tipo de suscripción-->
                         <h4 class="mod-sus"><?php echo $datos["nombre"]; ?></h4>
                         
@@ -33,12 +32,12 @@
                                 <p class="desc"><?php echo $datos["descripcion"]; ?></p>
                                 <p class="precio"><?php echo $datos["precio"]; ?> <?php echo $datos["divisa"]; ?> (IVA incluido)</p>
                                 <!--Botón submit-->
-                                <input type="submit" class="float-right suscribirse" value="Añadir a Carrito"><br>
+                                <input type="hidden" name="id_suscripcion" value="<?php echo $datos["id_suscripcion"] ?>">
+                                <input type="submit" class="float-right suscribirse" value="Comprar"><br>
                             </div>
                         </div>
-
-                    <?php } ?>
                 </form>
+                <?php } ?>
             </div>
 
         </div><br>

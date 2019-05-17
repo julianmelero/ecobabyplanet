@@ -52,8 +52,8 @@ class compraDAO
         $sql = "INSERT INTO usuario_compra_suscripcion (id_usuario, id_suscripcion, fecha_compra, fecha_expiracion) VALUES (?,?,CURRENT_TIMESTAMP,?)";
         $stmt = $conn->prepare($sql);
 
-        $id_usuario = $compra->getIdUsuario()->getId();
-        $id_suscripcion = $compra->getIdSuscripcion()->getIdSuscripcion();
+        $id_usuario = $compra->getIdUsuario();
+        $id_suscripcion = $compra->getIdSuscripcion();
         $fecha_expiracion = $compra->getFechaExpiracion();
 
         $stmt->bind_param('dds', $id_usuario, $id_suscripcion, $fecha_expiracion);
