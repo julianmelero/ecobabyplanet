@@ -11,16 +11,13 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h4>Comprar suscripción</h4>
-            <p>Revisa tu compra antes de confirmarla.</p>
+            <h4>Alerta de suscripción</h4>
         </div>
     </div>
-
-    <div class="form-group  suscripcion">
-
-        Que putas haces: <?php echo $suscripcion->getNombre(); ?>
+    <div class="form-group suscripcion" align="center">
+        Ops, no puedes comprar una nueva suscripción porque ya tienes una <b>Suscripción <?php echo $suscripcion->getNombre(); ?></b>.<br>
+        Puedes gestionar tu suscripción desde <a href="">Mis Suscripciones</a></li>.
     </div>
-
 </div><br>
 <footer>
     <div class="row">
