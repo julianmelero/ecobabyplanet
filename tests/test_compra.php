@@ -16,7 +16,7 @@ try {
     $usuarioDAO = new usuarioDAO();
     $compraDAO = new compraDAO();
 
-    /*$compra = $compraDAO->get_compra_by_id_usuario(1);
+    $compra = $compraDAO->get_compra_by_id_usuario(1);
     $suscripcion = $suscripcionDAO->get_suscripcion_by_id(1);
 
     echo "---------------------------<br>";
@@ -26,7 +26,7 @@ try {
     echo $suscripcion->getDescripcion(). '<br>';
     echo $suscripcion->getPrecio(). '<br>';
     echo $suscripcion->getDivisa(). '<br>';
-    echo $compra->getFechaExpiracion(). '<br>';*/
+    echo $compra->getFechaExpiracion(). '<br>';
 
     /**
      * test insert_compra method
@@ -40,17 +40,17 @@ try {
     $compra->setIdSuscripcion($suscripcion);
     $compra->setFechaCompra("");
     $compra->setFechaExpiracion("2019-05-15");
-    $compraDAO->insert_compra($compra);*/
+    $compraDAO->insert_compra($compra);
 
     /**
      * test delete_compra method
      */
-    echo "---------------------------<br>";
+    /*echo "---------------------------<br>";
     echo "test delete_compra method<br>";
     $compra = $compraDAO->get_compra_by_id_usuario(1);
     $compraDAO->delete_compra($compra);
     $compra = $compraDAO->get_compra_by_id_usuario(1);
-    echo (!empty($compra) ? 'existe' : 'no existe') . '<br>';
+    echo (!empty($compra) ? 'existe' : 'no existe') . '<br>';*/
 
 } finally {
     datasource::get_instance()->close_connection();

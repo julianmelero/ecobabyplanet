@@ -23,9 +23,6 @@ if (session_status() == PHP_SESSION_NONE) {
                         <li class="nav-item">
                             <a class="nav-link" href="index.php?metodo=suscripcion&accion=listar_suscripciones">Suscripciones</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Carrito de compra</a>
-                        </li>
                     </ul>
                     <ul>  
                     <?php 
