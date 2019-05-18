@@ -19,8 +19,8 @@
     <div class="form-group  suscripcion">
         <p>Disfruta de tu <b>suscripción <?php echo $suscripcion->getNombre(); ?></b> válida hasta el
             <?php
-            $fecha_sin_formato = $compra->getFechaExpiracion();
-            $fecha_formateada = date("d-m-Y", strtotime($fecha_sin_formato));
+            $fecha_original = $compra->getFechaExpiracion();
+            $fecha_formateada = date("d-m-Y", strtotime($fecha_original));
             echo $fecha_formateada;?>.</p>
     </div>
 
