@@ -35,31 +35,21 @@
                               <h2>Suscripción: <?php echo $datos_suscripcion["nombre"];  ?> </h2>  
                         </div>
                     </div>
-                    <input type="hidden" name="nombre_suscripcion" id="nombre_suscripcion" value="<?php echo $datos_suscripcion["nombre"]; ?>"><input type="button" value="Añadir Producto"> 
+                    <input type="hidden" name="nombre_suscripcion" id="nombre_suscripcion" value="<?php echo $datos_suscripcion["nombre"]; ?>"><a  class="btn btn-success" href="">Añadir Producto</a> 
                     </form>
                     <?php
                     $resultado_suscripciones_suscripcion = $suscripciones->get($datos_suscripcion["id_suscripcion"]);                
-                    while ($datos_suscripciones_producto = $resultado_suscripciones_suscripcion[0]->fetch()) { // Listamos las suscripciones tiene producto                                                                              
-                        $resultado_productos = $productos->get_producto($datos_suscripciones_producto);
-                        while ($datos_producto = $resultado_productos[0]->fetch()) { // Listamos productos  ?>
+                    while ($datos_suscripciones_producto = $resultado_suscripciones_suscripcion[0]->fetch()) { // Listamos suscripciones tiene producto                                                                                                                              
+                        
+                        $resultado_productos = $productos->get_producto_suscripcion($datos_suscripciones_producto["id_producto"]);                        
+                        while ($datos_producto = $resultado_productos[0]->fetch()) {  // Listamos productos  ?>
                 
-                        <form action="index.php?metodo=suscripcion_producto&accion=eliminar_producto" method="POST">
+                        <form action="index.php?metodo=suscripcion_producto&accion=eliminar_producto" method="POST">                                            
                             <div class="form-group">
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <h3>Productos</h3>
-                                </div>
-                            </div>                
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-xs-12">
                                         <input type="hidden" name="id_suscripcion" id="id_suscripcion" value="<?php echo $datos_suscripciones_producto["id_suscripcion"]; ?>"> 
                                         <input type="hidden" name="id_producto" id="id_producto" value="<?php echo $datos_suscripciones_producto["id_producto"]; ?>">
                                         <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre" readonly size="45" value="<?php echo $datos_producto['nombre'];  ?>" required>                
-                                    </div>                    
-                                <div class="row">    
-                                <input type="submit" class="btn btn-warning" type="submit" value="Eliminar">
-                            </div>
+                                        <input type="submit" class="btn btn-warning" type="submit" value="Eliminar">                                                            
                             </div>
                     </form>
             

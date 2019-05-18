@@ -3,9 +3,9 @@ include_once "model.php";
 
 class model_suscripcion_producto extends model{
 
-    public function get() {
-        $sql = "SELECT * FROM suscripcion_tiene_producto";
-        return $this->query($sql, array());
+    public function get($id) {
+        $sql = "SELECT * FROM suscripcion_tiene_producto WHERE id_suscripcion = ?";
+        return $this->query($sql, array($id));
     }
     public function get_suscrip() {
         $sql = "SELECT * FROM suscripcion";

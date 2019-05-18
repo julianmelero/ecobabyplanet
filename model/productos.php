@@ -19,5 +19,10 @@ class model_productos extends model{
         $sql="update producto set nombre=?,descripcion=? where id_producto=?;";
         return $this->query($sql,array($parametros["nombre"],$parametros["descripcion"],$parametros["id_producto"]));
     }
+    function get_producto_suscripcion($id){        
+        $sql= "select * from producto where id_producto=?;";
+        return $this->query($sql,array($id));
+    }
+
 
 }
