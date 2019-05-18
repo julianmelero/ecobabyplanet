@@ -32,7 +32,7 @@
                                 <?php 
                                 $resultado_productos= $productos->get_productos_no_suscripcion($_POST["id_suscripcion"]);
                                 ?>
-                                <select>
+                                <select name="id_producto">
                                 <?php
                                 while ($datos_productos = $resultado_productos[0]->fetch()){
                                     
@@ -45,7 +45,8 @@
                               </select>
                         </div>
                     </div>
-                    <input type="submit" value="Añadir">
+                    <a class="btn btn-warning" href="index.php?metodo=suscripcion_producto&accion=listar_suscripciones_productos">Volver</a>
+                    <input class="btn btn-success" type="submit" value="Añadir">
                     </form>
             
             </div>

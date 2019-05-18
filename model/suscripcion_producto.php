@@ -20,6 +20,11 @@ class model_suscripcion_producto extends model{
         $sql = "DELETE FROM suscripcion_tiene_producto WHERE id_suscripcion= ? and id_producto = ?";        
         return $this->query($sql, array($parametros["id_suscripcion"], $parametros["id_producto"]));        
     }
+
+    function insertar_producto($parametros){
+        $sql = "INSERT INTO suscripcion_tiene_producto (id_suscripcion,id_producto ) VALUES (?,?); ";        
+        return $this->query($sql, array($parametros["id_suscripcion"], $parametros["id_producto"]));        
+    }
 }
 
 
