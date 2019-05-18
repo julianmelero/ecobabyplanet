@@ -33,7 +33,7 @@
                     <div class="form-group">
                         <div class="row">
                             <div class="col-xs-12">
-                              <h2><?php echo $datos_producto_suscripcion["nombre"];  ?> </h2>  
+                              <h2>Suscripción: <?php echo $datos_producto_suscripcion["nombre"];  ?> </h2>  
                         </div>
                     </div>
                     <input type="hidden" name="nombre_suscripcion" id="nombre_suscripcion" value="<?php echo $datos_producto_suscripcion["nombre"]; ?>"><input type="button" value="Añadir Producto"> 
@@ -49,10 +49,17 @@
                         <h3>Productos</h3>
                     </div>
                 </div>                
-                <input type="hidden" name="id_suscripcion" id="id_suscripcion" value="<?php echo $datos_producto_suscripcion["id_suscripcion"]; ?>"> 
-                <input type="hidden" name="id_producto" id="id_producto" value="<?php echo $datos_producto["id_producto"]; ?>">
-                <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre" readonly size="45" value="<?php echo $datos_producto['nombre'];  ?>" required>                
-                <input type="submit" class="btn btn-warning" type="submit" value="Eliminar">
+                <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-12">
+                            <input type="hidden" name="id_suscripcion" id="id_suscripcion" value="<?php echo $datos_producto_suscripcion["id_suscripcion"]; ?>"> 
+                            <input type="hidden" name="id_producto" id="id_producto" value="<?php echo $datos_producto["id_producto"]; ?>">
+                            <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre" readonly size="45" value="<?php echo $datos_producto['nombre'];  ?>" required>                
+                        </div>                    
+                        <div class="row">    
+                            <input type="submit" class="btn btn-warning" type="submit" value="Eliminar">
+                        </div>
+                </div>
                 </form>
             
             <?php }
