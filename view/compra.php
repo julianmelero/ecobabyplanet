@@ -12,14 +12,16 @@
     <div class="row">
         <div class="col-md-12">
             <h4>Resumen de compra</h4>
-            <p>Revisa tu compra antes de confirmarla.</p>
+
         </div>
     </div>
 
     <div class="form-group  suscripcion">
-
-            comprada <?php echo $suscripcion->getNombre(); ?>
-
+        <p>Disfruta de tu <b>suscripción <?php echo $suscripcion->getNombre(); ?></b> válida hasta el
+            <?php
+            $fecha_sin_formato = $compra->getFechaExpiracion();
+            $fecha_formateada = date("d-m-Y", strtotime($fecha_sin_formato));
+            echo $fecha_formateada;?>.</p>
     </div>
 
 </div><br>

@@ -59,9 +59,7 @@ class carrito {
         } finally {
             datasource::get_instance()->close_connection();
         }
-
     }
-
 }
 
 ?>

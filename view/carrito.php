@@ -12,14 +12,12 @@
     <div class="row">
         <div class="col-md-12">
             <h4>Comprar suscripción</h4>
-            <p>Revisa tu compra antes de confirmarla.</p>
+            <p>Revisa tu compra antes de confirmarla</p>
         </div>
     </div>
 
     <div class="form-group  suscripcion">
         <form action="index.php?metodo=carrito&accion=comprar" method="POST">
-
-            <?php echo $suscripcion->getNombre(); ?>
 
             <!--Tipo de suscripción-->
             <h4 class="mod-sus"><?php echo $suscripcion->getNombre(); ?></h4>
@@ -35,7 +33,7 @@
                     <p class="precio"><?php echo $suscripcion->getPrecio(); ?> <?php echo $suscripcion->getDivisa(); ?> (IVA incluido)</p>
                     <!--Botón submit-->
                     <input type="hidden" name="id_suscripcion" value="<?php echo $suscripcion->getIdSuscripcion() ?>">
-                    <input type="submit" class="float-right suscribirse" value="Comprar"><br>
+                    <input type="submit" class="float-right suscribirse" value="Confirmar compra"><br>
                 </div>
             </div>
         </form>
