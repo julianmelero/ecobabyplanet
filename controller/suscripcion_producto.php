@@ -11,7 +11,7 @@ class suscripcion_producto {
         $productos = new model_productos("ecobabyplanet");
         $resultado_suscripciones = $suscripciones->get();        
 
-        require_once getcwd()."/view/suscripciones.php";
+        require_once getcwd()."/view/suscripcion_productos.php";
     }
 
 }

@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <img src="imagenes/caja.png">
-                    <h4>Administrar Productos</h4>
+                    <h4>Administrar Suscripciones</h4>
                 </div>
             </div>
             
@@ -25,26 +25,33 @@
             <br>
             <table class="table table-sm">
             <thead>
-            <th>Nombre</th>
-            <th>Descripción</th>
+            <th>Suscripción</th>
+            <th>Productos</th>
             <th></th>
             </thead>
             <tbody>            
             <?php 
-            while ($datos_suscripciones = $resultado[0]->fetch()) { // Listamos las suscripciones
-                $resultado_productos = $productos->getproducto($datos["id_producto"]);
-                while ($datos_producto = $resultado[0]->fetch()) { // Listamos productos  ?>
+            while ($datos_suscripciones = $resultado_suscripciones[0]->fetch()) { // Listamos las suscripciones tiene producto                                
+                $resultado_suscripciones_suscripcion = $suscripciones->get_suscripciones($datos_suscripciones["id_suscripcion"]);                
+                while ($datos_producto_suscripcion = $resultado_suscripciones_suscripcion[0]->fetch()) { // Listamos los de las suscripciones                    
+                    $resultado_productos = $productos->get_producto($datos_suscripciones["id_producto"]);                    
+                    while ($datos_producto = $resultado_productos[0]->fetch()) { // Listamos productos  ?>
             <tr>
                 <form action="index.php?metodo=productos&accion=irproducto" method="POST">
-                <td> <input type="hidden" name="id_producto" id="id_producto" value="<?php echo $datos["id_producto"]; ?>"> 
-                <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre" readonly size="45" value="<?php echo $datos['nombre'];  ?>" required>
+                <td><input type="text" name="nombre_suscripcion" id="nombre_suscripcion" value="<?php echo $datos_producto_suscripcion["nombre"]; ?>"> </td>
+            </tr>
+            <tr>
+                <td> <input type="hidden" name="id_producto" id="id_producto" value="<?php echo $datos_producto["id_producto"]; ?>"> 
+                <td> <input type="hidden" name="id_producto" id="id_producto" value="<?php echo $datos_producto["id_producto"]; ?>"> 
+                <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre" readonly size="45" value="<?php echo $datos_producto['nombre'];  ?>" required>
                 </td>              
-                <td> <input type="text" class="form-control" name="descripcion" id="descripcion" placeholder="Descripcion" readonly size="45" value="<?php echo $datos['descripcion'];  ?>" required></td>              
-                <td><input type="submit" class="btn btn-warning" type="submit" value="Modificar"></td>
+                <td> <input type="text" class="form-control" name="descripcion" id="descripcion" placeholder="Descripcion" readonly size="45" value="<?php echo $datos_producto['descripcion'];  ?>" required></td>              
+                <td><input type="submit" class="btn btn-warning" type="submit" value="Eliminar"></td>
                 </form>
             </tr>  
             <?php }
-            } ?>                    
+            }
+         } ?>                    
 
             </tbody>
             </table>
