@@ -14,4 +14,10 @@ class suscripcion_producto {
         require_once getcwd()."/view/suscripcion_productos.php";
     }
 
+    function eliminar_producto($parametros){
+        $suscripciones = new model_suscripcion_producto("ecobabyplanet");
+        $suscripciones->eliminar_producto($parametros);
+        header("Location: index.php?metodo=suscripcion_producto&accion=listar_suscripciones_productos");
+        
+    }
 }
