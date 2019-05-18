@@ -24,5 +24,10 @@ class model_productos extends model{
         return $this->query($sql,array($id));
     }
 
+    function get_productos_no_suscripcion($id_suscripcion){
+        $sql= "SELECT * FROM producto p WHERE p.id_producto NOT IN (SELECT id_producto FROM suscripcion_tiene_producto WHERE id_suscripcion=?);";
+        return $this->query($sql,array($id_suscripcion));
+    }
+
 
 }

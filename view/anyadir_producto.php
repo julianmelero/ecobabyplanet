@@ -30,7 +30,7 @@
                     <div class="row">
                             <div class="col-xs-12">
                                 <?php 
-                                $resultado_productos= $productos->get_productos();
+                                $resultado_productos= $productos->get_productos_no_suscripcion($_POST["id_suscripcion"]);
                                 ?>
                                 <select>
                                 <?php
@@ -45,6 +45,7 @@
                               </select>
                         </div>
                     </div>
+                    <input type="submit" value="Añadir">
                     </form>
             
             </div>
