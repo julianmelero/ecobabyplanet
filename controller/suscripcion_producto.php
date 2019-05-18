@@ -20,4 +20,10 @@ class suscripcion_producto {
         header("Location: index.php?metodo=suscripcion_producto&accion=listar_suscripciones_productos");
         
     }
+
+    function anyadir_producto($parametros){
+        $suscripciones = new model_suscripcion_producto("ecobabyplanet");
+        $productos = new model_productos("ecobabyplanet");        
+        require_once getcwd()."/view/anyadir_producto.php";
+    }
 }

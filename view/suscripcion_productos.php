@@ -27,7 +27,7 @@
             
                 while ($datos_suscripcion = $resultado_suscripciones[0]->fetch()) { // Listamos de las suscripciones                                                               
                     ?>
-                    <form action="index.php?metodo=suscripcion_producto&accion=eliminar_producto" method="POST">
+                    <form action="index.php?metodo=suscripcion_producto&accion=anyadir_producto" method="POST">
                     <input type="hidden" name="id_suscripcion" id="id_suscripcion" value="<?php echo $datos_suscripcion["id_suscripcion"]; ?>"> 
                     <div class="form-group">
                         <div class="row">
@@ -35,7 +35,7 @@
                               <h2>Suscripción: <?php echo $datos_suscripcion["nombre"];  ?> </h2>  
                         </div>
                     </div>
-                    <input type="hidden" name="nombre_suscripcion" id="nombre_suscripcion" value="<?php echo $datos_suscripcion["nombre"]; ?>"><a  class="btn btn-success" href="">Añadir Producto</a> 
+                    <input type="hidden" name="nombre_suscripcion" id="nombre_suscripcion" value="<?php echo $datos_suscripcion["nombre"]; ?>"> <input type="submit" class="btn btn-success" value="Añadir producto">  
                     </form>
                     <?php
                     $resultado_suscripciones_suscripcion = $suscripciones->get($datos_suscripcion["id_suscripcion"]);                
