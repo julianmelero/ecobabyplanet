@@ -9,7 +9,7 @@ class suscripcion_producto {
         
         $suscripciones = new model_suscripcion_producto("ecobabyplanet");
         $productos = new model_productos("ecobabyplanet");
-        $resultado_suscripciones = $suscripciones->get();        
+        $resultado_suscripciones = $suscripciones->get_suscrip();        
 
         require_once getcwd()."/view/suscripcion_productos.php";
     }

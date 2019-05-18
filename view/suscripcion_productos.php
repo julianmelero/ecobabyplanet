@@ -19,48 +19,49 @@
             <div class="form-group">
             <div class="row">
                 <div class="col-xs-12">
-                    <a type="button" class="btn btn-primary" href="index.php?metodo=productos&accion=nuevo">Añadir</a>
+                    <a type="button" class="btn btn-primary" href="index.php?metodo=productos&accion=nuevo">Añadir Suscripción</a>
                 </div>
             </div>
             <br>            
             <?php 
-            while ($datos_suscripciones = $resultado_suscripciones[0]->fetch()) { // Listamos las suscripciones tiene producto                                
-                $resultado_suscripciones_suscripcion = $suscripciones->get_suscripciones($datos_suscripciones["id_suscripcion"]);                
-                while ($datos_producto_suscripcion = $resultado_suscripciones_suscripcion[0]->fetch()) { // Listamos de las suscripciones                                                               
+            
+                while ($datos_suscripcion = $resultado_suscripciones[0]->fetch()) { // Listamos de las suscripciones                                                               
                     ?>
                     <form action="index.php?metodo=suscripcion_producto&accion=eliminar_producto" method="POST">
-                    <input type="hidden" name="id_suscripcion" id="id_suscripcion" value="<?php echo $datos_producto_suscripcion["id_suscripcion"]; ?>"> 
+                    <input type="hidden" name="id_suscripcion" id="id_suscripcion" value="<?php echo $datos_suscripcion["id_suscripcion"]; ?>"> 
                     <div class="form-group">
                         <div class="row">
                             <div class="col-xs-12">
-                              <h2>Suscripción: <?php echo $datos_producto_suscripcion["nombre"];  ?> </h2>  
+                              <h2>Suscripción: <?php echo $datos_suscripcion["nombre"];  ?> </h2>  
                         </div>
                     </div>
-                    <input type="hidden" name="nombre_suscripcion" id="nombre_suscripcion" value="<?php echo $datos_producto_suscripcion["nombre"]; ?>"><input type="button" value="Añadir Producto"> 
+                    <input type="hidden" name="nombre_suscripcion" id="nombre_suscripcion" value="<?php echo $datos_suscripcion["nombre"]; ?>"><input type="button" value="Añadir Producto"> 
                     </form>
                     <?php
-                    $resultado_productos = $productos->get_producto($datos_suscripciones);
-                    while ($datos_producto = $resultado_productos[0]->fetch()) { // Listamos productos  ?>
-            
-                <form action="index.php?metodo=suscripcion_producto&accion=eliminar_producto" method="POST">
-                <div class="form-group">
-                    <div class="row">
-                        <div class="col-xs-12">
-                        <h3>Productos</h3>
-                    </div>
-                </div>                
-                <div class="form-group">
-                        <div class="row">
-                            <div class="col-xs-12">
-                            <input type="hidden" name="id_suscripcion" id="id_suscripcion" value="<?php echo $datos_producto_suscripcion["id_suscripcion"]; ?>"> 
-                            <input type="hidden" name="id_producto" id="id_producto" value="<?php echo $datos_producto["id_producto"]; ?>">
-                            <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre" readonly size="45" value="<?php echo $datos_producto['nombre'];  ?>" required>                
-                        </div>                    
-                        <div class="row">    
-                            <input type="submit" class="btn btn-warning" type="submit" value="Eliminar">
-                        </div>
-                </div>
-                </form>
+                    $resultado_suscripciones_suscripcion = $suscripciones->get($datos_suscripcion["id_suscripcion"]);                
+                    while ($datos_suscripciones_producto = $resultado_suscripciones_suscripcion[0]->fetch()) { // Listamos las suscripciones tiene producto                                                                              
+                        $resultado_productos = $productos->get_producto($datos_suscripciones_producto);
+                        while ($datos_producto = $resultado_productos[0]->fetch()) { // Listamos productos  ?>
+                
+                        <form action="index.php?metodo=suscripcion_producto&accion=eliminar_producto" method="POST">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <h3>Productos</h3>
+                                </div>
+                            </div>                
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <input type="hidden" name="id_suscripcion" id="id_suscripcion" value="<?php echo $datos_suscripciones_producto["id_suscripcion"]; ?>"> 
+                                        <input type="hidden" name="id_producto" id="id_producto" value="<?php echo $datos_suscripciones_producto["id_producto"]; ?>">
+                                        <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre" readonly size="45" value="<?php echo $datos_producto['nombre'];  ?>" required>                
+                                    </div>                    
+                                <div class="row">    
+                                <input type="submit" class="btn btn-warning" type="submit" value="Eliminar">
+                            </div>
+                            </div>
+                    </form>
             
             <?php }
             }
