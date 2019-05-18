@@ -15,8 +15,8 @@ class suscripcionDAO
     public function get_suscripcion_by_id($id): ?suscripcion
     {
         $conn = $this->datasource->get_connection();
-        $sql = "SELECT id_suscripcion, id_usuario, s.nombre, s.descripcion, s.imagen, s.precio, s.divisa
-                FROM suscripcion s JOIN usuario USING (id_usuario) 
+        $sql = "SELECT id_suscripcion, nombre, descripcion, imagen, precio, divisa
+                FROM suscripcion 
                 WHERE id_suscripcion = ?";
         // Vincular variables a una instrucción preparada como parámetros
         $stmt = $conn->prepare($sql);
@@ -29,7 +29,7 @@ class suscripcionDAO
 
     private function extract_single_result($stmt): ?suscripcion
     {
-        $stmt->bind_result($id_suscripcion, $id_usuario, $nombre, $descripcion, $imagen, $precio, $divisa);
+        $stmt->bind_result($id_suscripcion, $nombre, $descripcion, $imagen, $precio, $divisa);
         $suscripcion = null;
         if ($stmt->fetch()) {
 
