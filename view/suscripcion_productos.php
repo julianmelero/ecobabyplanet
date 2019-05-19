@@ -17,11 +17,7 @@
             </div>
             
             <div class="form-group">
-            <div class="row">
-                <div class="col-xs-12">
-                    <a type="button" class="btn btn-primary" href="index.php?metodo=productos&accion=nuevo">Añadir Suscripción</a>
-                </div>
-            </div>
+            
             <br>            
             <?php 
             
