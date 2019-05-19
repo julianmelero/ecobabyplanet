@@ -17,7 +17,7 @@
     </div>
 
     <div class="form-group  suscripcion">
-        <p>Disfruta de tu <b>suscripción <?php echo $suscripcion->getNombre(); ?></b> válida hasta el
+        <p>Disfruta de tu <b>suscripción <?php echo $suscripcion->getNombre();?></b> válida hasta el
             <?php
             $fecha_original = $compra->getFechaExpiracion();
             $fecha_formateada = date("d-m-Y", strtotime($fecha_original));

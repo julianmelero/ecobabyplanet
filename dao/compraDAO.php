@@ -37,7 +37,7 @@ class compraDAO
 
             $compra = new compra();
             $compra->setIdUsuario($id_usuario);
-            $compra->setIdSuscripcion($id_usuario);
+            $compra->setIdSuscripcion($id_suscripcion);
             $compra->setFechaCompra($fecha_compra);
             $compra->setFechaExpiracion($fecha_expiracion);
 

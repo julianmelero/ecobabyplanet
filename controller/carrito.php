@@ -24,7 +24,10 @@ class carrito {
 
             if (empty($compra)) {
                 require_once getcwd()."/view/carrito.php";
+
             } else {
+
+                $suscripcion = $suscripcionDAO->get_suscripcion_by_id($compra->getIdSuscripcion());
                 require_once getcwd()."/view/alerta_carrito.php";
             }
 
