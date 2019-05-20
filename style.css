@@ -1,0 +1,132 @@
+#logotipo{
+    max-width: 100%;
+    height: 100px;
+}
+
+#logotipo1{
+    width: 150px;
+    height: 90px;
+}
+
+img{
+    max-width: 100%;
+    height: 250px;
+    margin: 10px auto;
+    display: block;
+    padding: 10px 10px;
+}
+
+#btn{
+    padding: 10px 15px;
+    background-color: #154360;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+}
+
+#logo{
+    background-color: #DEFCD2;
+    width: 100%;
+    padding: 50px 50px;
+}
+
+h1{
+    color: #154360;
+    text-align: center;
+    font-size: 22px;
+}
+
+h4{
+    color: #154360;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+p{
+    text-align: center;
+    color: gray;
+}
+
+#text {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+footer{
+    background-color: #DEFCD2;
+    padding: 25px 25px;
+    color: #154360;
+}
+
+ul li {
+    display: inline;
+    padding: 10px 10px;
+}
+
+ul li a {
+    text-align: center;
+    text-decoration: none;
+    color: #154360;
+}
+
+form{
+    margin: 0 auto;
+    text-align: center;
+}
+
+#btn-sus{
+    color: white;
+    background-color: #154360;
+    text-align: center;
+    padding: 10px 25px;    
+    border-radius: 15px;
+}
+
+#usuario {
+    padding: 12px 40px;
+    background: url("imagenes/user2.png") 1px no-repeat;
+}
+
+#password {
+    padding: 12px 40px;
+    background: url("imagenes/key.png") 1px no-repeat;
+}
+
+.suscripcion {
+    margin-bottom: 150px;
+}
+
+.mod-sus {
+    color: #154360;
+    font-size: 2rem;
+    text-align: left;
+    margin-top: 50px;
+    margin-bottom: 40px;
+    margin-top: 120px;
+}
+
+.pro--img {
+    width: 250px;
+    height: 250px;
+    margin-top: -35px;
+}
+
+.desc {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.precio {
+    margin-top: 60px;
+    font-size: 16px;
+    width: 237px;
+}
+
+.suscribirse {
+    color: white;
+    background-color: #154360;
+    text-align: center;
+    padding: 10px 25px;
+    border-radius: 10px;
+}
