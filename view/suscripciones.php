@@ -17,27 +17,55 @@
             </div>
             
             <div class="form-group  suscripcion">
-                <?php while ($datos = $resultado[0]->fetch()) { ?>
                 <form action="index.php?metodo=carrito&accion=mostrar_carrito" method="POST">
-                        <!--Tipo de suscripción-->
-                        <h4 class="mod-sus"><?php echo $datos["nombre"]; ?></h4>
+                
+                <?php while ($datos_suscripcion = $resultado_suscripciones[0]->fetch()) { // Listamos de las suscripciones ?>
+
+                <!--Tipo de suscripción-->
+                <h4 class="mod-sus"><?php echo $datos_suscripcion["nombre"]; ?></h4>
                         
                         <div class="row">
                             <div class="col-md-4">
                                 <!--Imagen producto-->
-                                <img src="imagenes/caja.png" class="img-fluid pro--img float-left"/>
+                                <img src="<?php echo $datos_suscripcion["imagen"]; ?>" class="img-fluid pro--img float-left"/>
                             </div>
                             <div class="col-md-8">
                                 <!--Descripción producto, precio divisa-->
-                                <p class="desc"><?php echo $datos["descripcion"]; ?></p>
-                                <p class="precio"><?php echo $datos["precio"]; ?> <?php echo $datos["divisa"]; ?> (IVA incluido)</p>
+                                <p class="desc"><?php echo $datos_suscripcion["descripcion"]; ?></p>
+                                <p class="precio"><?php echo $datos_suscripcion["precio"]; ?> <?php echo $datos_suscripcion["divisa"]; ?> (IVA incluido)</p>
                                 <!--Botón submit-->
-                                <input type="hidden" name="id_suscripcion" value="<?php echo $datos["id_suscripcion"] ?>">
-                                <input type="submit" class="float-right suscribirse" value="Comprar"><br>
+                                <input type="submit" class="float-right suscribirse" value="Añadir a Carrito">
+                                <input type="hidden" name="id_suscripcion" value="<?php echo $datos["id_suscripcion"] ?>"><br>
                             </div>
                         </div>
+                        <br><br><br>
+
+                        <h4 class="lista">Productos incluidos</h4>
+
+                        <?php
+
+                        $resultado_suscripciones_suscripcion = $suscripciones->get($datos_suscripcion["id_suscripcion"]);                
+                        while ($datos_suscripciones_producto = $resultado_suscripciones_suscripcion[0]->fetch()) { // Listamos suscripciones tiene producto
+                        
+                        $resultado_productos = $productos->get_producto_suscripcion($datos_suscripciones_producto["id_producto"]);                        
+                        while ($datos_producto = $resultado_productos[0]->fetch()) {  // Listamos productos  ?>
+
+                                                                    
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <ul class="float-left">
+                                        <li><?php echo $datos_producto['nombre'];  ?></li>
+                                        <li><?php echo $datos_producto['descripcion'];  ?></li>
+                                    </ul>
+                                </div>
+                            </div>
+                                 
+
+                    <?php } 
+                    }
+                }
+                    ?>
                 </form>
-                <?php } ?>
             </div>
 
         </div><br>
