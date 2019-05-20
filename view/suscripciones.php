@@ -35,7 +35,8 @@
                                 <p class="precio"><?php echo $datos_suscripcion["precio"]; ?> <?php echo $datos_suscripcion["divisa"]; ?> (IVA incluido)</p>
                                 <!--Botón submit-->
                                 <input type="submit" class="float-right suscribirse" value="Añadir a Carrito">
-                                <input type="hidden" name="id_suscripcion" value="<?php echo $datos["id_suscripcion"] ?>"><br>
+                                <input type="hidden" name="id_suscripcion" value="<?php echo $datos_suscripcion["id_suscripcion"] ?>"><br>
+                                <input type="hidden" name="nombre" value="<?php echo $datos_suscripcion["nombre"] ?>"><br>
                             </div>
                         </div>
                         <br><br><br>
