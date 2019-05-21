@@ -14,13 +14,15 @@
 
             <table class="table table-sm">
             <thead>
-            <th>Suscripcion</th>
+            <th>Suscripción</th>
             <th>Precio</th>
             <th>Cantidad</th>            
-            <th>Opcion</th>
+            <th>Opción</th>
             </thead>
             <tbody>
-            <?php while ($datos = $resultado[0]->fetch()) { // Listamos suscripcion  ?>
+            <?php
+             $cuantos=0;
+             while ($datos = $resultado[0]->fetch()) { $cuantos++; // Listamos suscripcion  ?>
             <tr>
                 <form action="" method="POST">
                 <td><input type="text" class="form-control" readonly name="nombre_suscripcion" id="nombre_suscripcion" value="<?php echo $datos["nombre"]; ?>"></td> 
@@ -29,7 +31,12 @@
                 <td><input type="submit" class="btn btn-warning" type="submit" value="Cancelar"></td>
                 </form>
             </tr>  
-            <?php } ?>                    
+            <?php }
+            if($cuantos==0){
+                ?>
+                <td>No tienes suscripciones</td> 
+                <?php
+            } ?>                    
 
             </tbody>
             </table>
