@@ -16,18 +16,16 @@
             <thead>
             <th>Suscripcion</th>
             <th>Precio</th>
-            <th>Cantidad</th>
-            <th>Total</th>
+            <th>Cantidad</th>            
             <th>Opcion</th>
             </thead>
             <tbody>
             <?php while ($datos = $resultado[0]->fetch()) { // Listamos suscripcion  ?>
             <tr>
                 <form action="" method="POST">
-                <td><input type="hidden" name="nombre_suscripcion" id="nombre_suscripcion" value="<?php echo $datos["nombre"]; ?>"></td> 
+                <td><input type="text" class="form-control" readonly name="nombre_suscripcion" id="nombre_suscripcion" value="<?php echo $datos["nombre"]; ?>"></td> 
                 <td><input type="text" class="form-control" name="precio" id="precio" readonly size="45" value="<?php echo $datos['precio'];  ?>" required></td>
-                <td> <input type="text" class="form-control" name="cantidad" id="cantidad" readonly size="45" value="<?php echo $datos['cantidad'];  ?>" required></td>              
-                <td> <input type="text" class="form-control" name="total" id="total" readonly size="45" value="<?php echo $datos['Total'];  ?>" required></td>  
+                <td> <input type="number" class="form-control" name="cantidad" id="cantidad" readonly size="1" value="1" required></td>                              
                 <td><input type="submit" class="btn btn-warning" type="submit" value="Cancelar"></td>
                 </form>
             </tr>  

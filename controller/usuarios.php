@@ -63,6 +63,7 @@ class usuarios {
         $resultado = $usuarios->get_usuario($_SESSION["email"]);
         while ($datos = $resultado[0]->fetch()) {
             $_SESSION["rol"] = $datos["rol_idrol"];
+            $_SESSION["id_usuario"] = $datos["id_usuario"];
         }
         
     }
