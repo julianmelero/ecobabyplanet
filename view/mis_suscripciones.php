@@ -16,18 +16,25 @@
             <thead>
             <th>Suscripción</th>
             <th>Precio</th>
-            <th>Cantidad</th>            
+            <th>Cantidad</th> 
+            <th>Fecha compra</th>           
+            <th>Fecha expiración</th>
             <th>Opción</th>
             </thead>
             <tbody>
             <?php
              $cuantos=0;
-             while ($datos = $resultado[0]->fetch()) { $cuantos++; // Listamos suscripcion  ?>
+             while ($datos = $resultado[0]->fetch()) {
+                $fecha_compra = date("d/m/Y", strtotime($datos["fecha_compra"]));
+                  $cuantos++; // Listamos suscripcion  ?>
             <tr>
-                <form action="" method="POST">
+                <form action="index.php?metodo=mis_suscripciones&accion=cancelar_suscripcion" method="POST">
+                <input type="hidden" class="form-control" readonly name="id_suscripcion" id="id_suscripcion" value="<?php echo $datos["id_suscripcion"]; ?>">
                 <td><input type="text" class="form-control" readonly name="nombre_suscripcion" id="nombre_suscripcion" value="<?php echo $datos["nombre"]; ?>"></td> 
                 <td><input type="text" class="form-control" name="precio" id="precio" readonly size="45" value="<?php echo $datos['precio'];  ?>" required></td>
-                <td> <input type="number" class="form-control" name="cantidad" id="cantidad" readonly size="1" value="1" required></td>                              
+                <td> <input type="number" class="form-control" name="cantidad" id="cantidad" readonly size="1" value="1" required></td>                         
+                <td><input type="datet" class="form-control" name="fecha_compra" id="fecha_compra" readonly  value="<?php echo $fecha_compra;  ?>" required></td>
+                <td><input type="date" class="form-control" name="fecha_expiracion" id="fecha_expiracion" readonly  value="<?php echo $datos['fecha_expiracion'];  ?>" required></td>
                 <td><input type="submit" class="btn btn-warning" type="submit" value="Cancelar"></td>
                 </form>
             </tr>  

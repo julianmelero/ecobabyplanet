@@ -12,6 +12,14 @@ class mis_suscripciones {
 
     }
 
+    function cancelar_suscripcion($parametros){
+        session_start();
+        $suscripcionnes = new model_mis_suscripciones("ecobabyplanet");
+        $suscripcionnes->cancelar_suscripcion($_SESSION["id_usuario"]);
+        //Llamamos a la página mis_suscripciones
+        header("Location:  index.php?metodo=mis_suscripciones&accion=ver_suscripcion");
+    }
+
 }
 
 ?>

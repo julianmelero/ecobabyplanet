@@ -26,8 +26,8 @@
                         
                         <div class="row">
                             <div class="col-md-4">
-                                <!--Imagen producto-->
-                                <img src="<?php echo $datos_suscripcion["imagen"]; ?>" class="img-fluid pro--img float-left"/>
+                                <!--Imagen producto-->                                
+                                <img src="<?php echo './imagenes/'.$datos_suscripcion['imagen']; ?>" class="img-fluid pro--img float-left"/>
                             </div>
                             <div class="col-md-8">
                                 <!--Descripción producto, precio divisa-->

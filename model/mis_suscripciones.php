@@ -12,6 +12,13 @@ class model_mis_suscripciones extends model {
     }
 
 
+    function cancelar_suscripcion($id){
+        $sql="DELETE FROM usuario_compra_suscripcion
+        WHERE id_usuario = ?;";
+        return $this->query($sql,array($id));
+    }
+
+
 
 }
 
