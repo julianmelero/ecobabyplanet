@@ -4,6 +4,7 @@ Crear fichero "credenciales.php" en la carpeta model con el contenido:
 DEFINE("HOST",'localhost');
 DEFINE("USER",'ecobaby');
 DEFINE("PASS",'ecobaby');
+DEFINE("DB_NAME",'ecobabyplanet');
 ?>
 
 
