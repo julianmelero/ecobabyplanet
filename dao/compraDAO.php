@@ -14,7 +14,11 @@ class compraDAO
         $this->datasource = datasource::get_instance();
     }
 
-    public function get_compra_by_id_usuario($id): ?Compra
+    /**
+     * @param $id
+     * @return Compra|null
+     */
+    public function get_compra_by_id_usuario($id)
     {
         $conn = $this->datasource->get_connection();
         $sql = "SELECT c.id_usuario, c.id_suscripcion, c.fecha_compra, c.fecha_expiracion
@@ -29,7 +33,11 @@ class compraDAO
         return $compra;
     }
 
-    private function extract_single_result($stmt): ?Compra
+    /**
+     * @param $stmt
+     * @return Compra|null
+     */
+    private function extract_single_result($stmt)
     {
         $stmt->bind_result($id_usuario, $id_suscripcion, $fecha_compra, $fecha_expiracion);
         $compra = null;

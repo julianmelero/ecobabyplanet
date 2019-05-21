@@ -12,7 +12,11 @@ class suscripcionDAO
         $this->datasource = datasource::get_instance();
     }
 
-    public function get_suscripcion_by_id($id): ?suscripcion
+    /**
+     * @param $id
+     * @return suscripcion|null
+     */
+    public function get_suscripcion_by_id($id)
     {
         $conn = $this->datasource->get_connection();
         $sql = "SELECT id_suscripcion, nombre, descripcion, imagen, precio, divisa
@@ -27,7 +31,11 @@ class suscripcionDAO
         return $suscripcion;
     }
 
-    private function extract_single_result($stmt): ?suscripcion
+    /**
+     * @param $stmt
+     * @return suscripcion|null
+     */
+    private function extract_single_result($stmt)
     {
         $stmt->bind_result($id_suscripcion, $nombre, $descripcion, $imagen, $precio, $divisa);
         $suscripcion = null;
