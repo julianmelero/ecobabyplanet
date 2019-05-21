@@ -16,7 +16,7 @@
     </div>
     <div class="form-group suscripcion" align="center">
         Ops, no puedes comprar una nueva suscripción porque ya tienes una <b>Suscripción <?php echo $suscripcion->getNombre(); ?></b>.<br>
-        Puedes gestionar tu suscripción desde <a href="">Mis Suscripciones</a></li>.
+        Puedes gestionar tu suscripción desde <a href="index.php?metodo=mis_suscripciones&accion=ver_suscripcion">Mis Suscripciones</a></li>.
     </div>
 </div><br>
 <footer>
