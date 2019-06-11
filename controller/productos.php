@@ -5,7 +5,7 @@ class productos {
         session_start();
     // Comprobamos que pueda acceder
     if(isset($_SESSION["rol"])){
-        $productos = new model_productos("ecobabyplanet");
+        $productos = new model_productos("ecobabyplanet2");
         $resultado = $productos->get_productos();
         require_once getcwd()."/view/productos.php"; 
     }
@@ -19,7 +19,7 @@ class productos {
         session_start();
     // Comprobamos que pueda acceder
     if(isset($_SESSION["rol"])){
-        $productos = new model_productos("ecobabyplanet");        
+        $productos = new model_productos("ecobabyplanet2");
         require_once getcwd()."/view/nuevo_producto.php";    
     }
     else{
@@ -32,7 +32,7 @@ class productos {
         session_start();
     // Comprobamos que pueda acceder
     if(isset($_SESSION["rol"])){
-        $productos = new model_productos("ecobabyplanet");        
+        $productos = new model_productos("ecobabyplanet2");
         $productos->guardar($parametros);
         header("Location: index.php?metodo=productos&accion=ver");
 
@@ -47,7 +47,7 @@ class productos {
         session_start();
     // Comprobamos que pueda acceder
     if(isset($_SESSION["rol"])){
-        $productos = new model_productos("ecobabyplanet");        
+        $productos = new model_productos("ecobabyplanet2");
         $productos->set_producto($parametros);
         header("Location: index.php?metodo=productos&accion=ver");
 
@@ -62,7 +62,7 @@ class productos {
         session_start();
     // Comprobamos que pueda acceder
     if(isset($_SESSION["rol"])){
-        $productos = new model_productos("ecobabyplanet");     
+        $productos = new model_productos("ecobabyplanet2");
         $resultado = $productos->get_producto($parametros);   
         require_once getcwd()."/view/mod_producto.php";    
     }

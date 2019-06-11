@@ -15,7 +15,7 @@ class carrito {
         session_start();
         if(isset($_SESSION["email"])){
             try {
-                
+
                 $usuarioDAO = new usuarioDAO();
                 $suscripcionDAO = new suscripcionDAO();
                 $compraDAO = new compraDAO();

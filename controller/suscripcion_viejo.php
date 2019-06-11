@@ -13,7 +13,7 @@ class suscripcion {
 
     function listar_suscripciones() {
         
-        $suscripciones = new model_suscripcion("ecobabyplanet");
+        $suscripciones = new model_suscripcion("ecobabyplanet2");
         $resultado = $suscripciones->getLista();
 
         require_once getcwd()."/view/suscripciones.php";

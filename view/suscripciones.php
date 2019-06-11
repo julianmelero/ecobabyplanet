@@ -15,11 +15,10 @@
                     <p>Elige el tipo de suscripción que más se adapte a tus necesidades</p>
                 </div>
             </div>
-            
+
             <div class="form-group  suscripcion">
-                <form action="index.php?metodo=carrito&accion=mostrar_carrito" method="POST">
-                
                 <?php while ($datos_suscripcion = $resultado_suscripciones[0]->fetch()) { // Listamos de las suscripciones ?>
+                <form action="index.php?metodo=carrito&accion=mostrar_carrito" method="POST">
 
                 <!--Tipo de suscripción-->
                 <h4 class="mod-sus"><?php echo $datos_suscripcion["nombre"]; ?></h4>
@@ -39,6 +38,8 @@
                                 <input type="hidden" name="nombre" value="<?php echo $datos_suscripcion["nombre"] ?>"><br>
                             </div>
                         </div>
+
+                </form>
                         <br><br><br>
 
                         <h4 class="lista">Productos incluidos</h4>
@@ -60,13 +61,12 @@
                                     </ul>
                                 </div>
                             </div>
-                                 
 
-                    <?php } 
+
+                    <?php }
                     }
                 }
                     ?>
-                </form>
             </div>
 
         </div><br>
