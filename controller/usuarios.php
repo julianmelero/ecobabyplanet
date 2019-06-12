@@ -7,7 +7,7 @@ class usuarios {
     }
     
     function alta($parametros){                
-        $usuarios = new model_usuarios("ecobabyplanet2");
+        $usuarios = new model_usuarios("ecobabyplanet");
         $resultado = $usuarios->alta($parametros);
         // Si el resultado es 0 es correcto
         if ($resultado==0) {
@@ -26,7 +26,7 @@ class usuarios {
 
 
     function entrar($parametros){
-        $usuarios = new model_usuarios("ecobabyplanet2");
+        $usuarios = new model_usuarios("ecobabyplanet");
         $resultado = $usuarios->entrar($parametros);
         // Si el resultado es 0 es correcto
         if ($resultado==0) {
@@ -51,7 +51,7 @@ class usuarios {
 
     function mis_datos(){
         session_start();
-        $usuarios = new model_usuarios("ecobabyplanet2");
+        $usuarios = new model_usuarios("ecobabyplanet");
         $resultado = $usuarios->get_usuario($_SESSION["email"]);
         require_once getcwd()."/view/mis_datos.php";
     }
@@ -59,7 +59,7 @@ class usuarios {
     function crear_sesion($parametros){        
         session_start();
         $_SESSION["email"] = $parametros["email"];
-        $usuarios = new model_usuarios("ecobabyplanet2");
+        $usuarios = new model_usuarios("ecobabyplanet");
         $resultado = $usuarios->get_usuario($_SESSION["email"]);
         while ($datos = $resultado[0]->fetch()) {
             $_SESSION["rol"] = $datos["rol_idrol"];

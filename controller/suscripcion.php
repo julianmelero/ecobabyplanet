@@ -14,8 +14,8 @@ class suscripcion {
 
     function listar_suscripciones() {
         
-        $suscripciones = new model_suscripcion("ecobabyplanet2");
-        $productos = new model_productos("ecobabyplanet2");
+        $suscripciones = new model_suscripcion("ecobabyplanet");
+        $productos = new model_productos("ecobabyplanet");
         $resultado = $suscripciones->getLista();
         $resultado_suscripciones = $suscripciones->get_suscrip();
 
